@@ -19,16 +19,23 @@ public class QuoteService : IQuoteService
 
     public async Task GetQuotesAsync()
     {
-        var response =
-            await _client.GetFromJsonAsync<ServiceResponse<List<QuoteDto>>>($"{ApiEndpoints.QuoteEndpoint}/getall");
+        try
+        {
+            var response =
+                await _client.GetFromJsonAsync<ServiceResponse<List<QuoteDto>>>(ApiEndpoints.QuoteEndpoint);
 
-        if (response is {Content: { }})
-        {
-            Quotes = response.Content;
+            if (response is { Content: { } })
+            {
+                Quotes = response.Content;
+            }
+            else
+            {
+                DisplayMessage = response?.StatusMessage;
+            }
         }
-        else
+        catch (Exception)
         {
-            DisplayMessage = response?.StatusMessage;
+            DisplayMessage = "Something went wrong. Quote cannot be displayed";
         }
     }
 }
