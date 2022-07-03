@@ -1,0 +1,17 @@
+﻿#homeImage {
+    max-height: 100vh;
+    width: 100vw;
+}
+
+#homeCaption {
+    position: absolute;
+    bottom: 2.5em;
+    padding-left: 1em;
+    color: white;
+}
+
+@media (min-width: 768px) {
+    #homeCaption {
+        bottom: 5em;
+    }
+}

@@ -1,9 +1,12 @@
 ﻿@page "/"
+@using JosephHungerman.Shared.Models.Enums
 
-<PageTitle>Index</PageTitle>
+<PageTitle>Joseph Hungerman</PageTitle>
 
-<h1>Hello, world!</h1>
-
-Welcome to your new app.
-
-<SurveyPrompt Title="How is Blazor working for you?" />
+<NavMenu />
+<QuoteBlock PageType="PageType.Home" />
+<figure class="d-inline-block">
+    <img src="/img/cristian-cristian-0JIX8f2AoG4-unsplash.jpg" alt="Workspace Image by Cristian Cristian" id="homeImage" />
+    <figcaption id="homeCaption">Photo by Cristian Cristian on Unsplash</figcaption>
+</figure>
+<FooterBar />

@@ -1,0 +1,21 @@
+﻿footer {
+    position: fixed;
+    bottom: 0;
+    background-color: white;
+}
+
+#jacaruTechCopy {
+    font-family: 'Source Code Pro'!important;
+}
+
+@media only screen and (max-width: 360px) {
+    #nameCopy {
+        display: none;
+    }
+
+}
+
+
+@media only screen and (max-width: 819px) {
+    #backendCopy { display: none; }
+}
