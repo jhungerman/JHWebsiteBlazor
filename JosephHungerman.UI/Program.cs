@@ -13,7 +13,7 @@ var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
 
-ApiEndpoints.ApiBaseUrl = new Uri("https://localhost:7103");
+ApiEndpoints.ApiBaseUrl = new Uri("https://api.josephhungerman.com");
 
 builder.Services.AddSingleton(_ => new HttpClient { BaseAddress = ApiEndpoints.ApiBaseUrl });
 builder.Services.AddScoped<IQuoteService, QuoteService>();
