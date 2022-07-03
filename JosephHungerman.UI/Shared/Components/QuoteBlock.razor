@@ -1,0 +1,11 @@
+﻿<section class="d-flex align-items-center justify-content-center bg-black text-white w-100 px-3 introQuote">
+    @if (Quote != null)
+    {
+        <q cite="@Quote?.CitationUrl">@Quote?.Text</q>
+        <cite>&#8211 @Quote?.Author</cite>
+    }
+    else
+    {
+        <LoadingPlaceholder />
+    }
+</section>
