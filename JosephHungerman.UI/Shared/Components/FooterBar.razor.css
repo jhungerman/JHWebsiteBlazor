@@ -1,5 +1,5 @@
 ﻿footer {
-    position: relative;
+    position: absolute;
     bottom: 0;
     background-color: white;
     margin-top: 1em;
@@ -14,12 +14,6 @@
         display: none;
     }
 
-}
-
-@media (max-width: 768px) {
-    footer {
-        position: absolute;
-    }
 }
 
 @media only screen and (max-width: 819px) {
