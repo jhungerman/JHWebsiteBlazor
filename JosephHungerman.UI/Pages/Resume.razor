@@ -5,6 +5,12 @@
 
 <QuoteBlock PageType="PageType.Resume" />
 
+@if (_isLoading)
+{
+    <LoadingPlaceholder />
+}
+else
+{
 <div class="container">
     @if (_resume != null)
     {
@@ -149,8 +155,5 @@
             }
         </section>
     }
-    else
-    {
-        <LoadingPlaceholder />
-    }
 </div>
+}
