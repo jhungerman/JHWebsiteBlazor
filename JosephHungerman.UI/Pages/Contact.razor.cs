@@ -39,5 +39,12 @@ public partial class Contact
 
         ToastService.ShowToast(ContactService.DisplayMessage,
             ContactService.SendSuccessful ? ToastLevel.Success : ToastLevel.Error);
+
+        if (ContactService.SendSuccessful)
+        {
+            _message = new MessageDto();
+
+            StateHasChanged();
+        }
     }
 }
