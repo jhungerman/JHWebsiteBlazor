@@ -3,6 +3,7 @@ using JosephHungerman.UI;
 using JosephHungerman.UI.Services.About;
 using JosephHungerman.UI.Services.Contact;
 using JosephHungerman.UI.Services.Quote;
+using JosephHungerman.UI.Services.Resume;
 using JosephHungerman.UI.Services.Toast;
 using JosephHungerman.UI.Static;
 using Microsoft.AspNetCore.Components.Web;
@@ -19,9 +20,6 @@ builder.Services.AddScoped<IQuoteService, QuoteService>();
 builder.Services.AddScoped<IAboutService, AboutService>();
 builder.Services.AddScoped<IToastService, ToastService>();
 builder.Services.AddScoped<IContactService, ContactService>();
-
-//var keyVaultEndpoint = new Uri(builder.Configuration.GetSection("VaultUri").Value);
-//builder.Configuration.AddAzureKeyVault(keyVaultEndpoint, new DefaultAzureCredential());
-
+builder.Services.AddScoped<IResumeService, ResumeService>();
 
 await builder.Build().RunAsync();

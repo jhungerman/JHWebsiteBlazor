@@ -16,6 +16,11 @@
 
 }
 
+@media (max-width: 768px) {
+    footer {
+        position: absolute;
+    }
+}
 
 @media only screen and (max-width: 819px) {
     #backendCopy { display: none; }
