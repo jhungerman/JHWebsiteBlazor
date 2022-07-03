@@ -1,5 +1,6 @@
 ﻿@page "/about"
 @using JosephHungerman.Shared.Models.Enums
+@using JosephHungerman.UI.Shared.Components
 <PageTitle>About</PageTitle>
 
 <QuoteBlock PageType="PageType.About" />
@@ -21,5 +22,9 @@
                 }
             </section>
         }
+    }
+    else
+    {
+        <LoadingPlaceholder />
     }
 </div>
