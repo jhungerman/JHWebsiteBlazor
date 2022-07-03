@@ -11,6 +11,7 @@ public partial class About
 {
     [Inject] private IAboutService? AboutService { get; set; }
     [Inject] private IToastService? ToastService { get; set; }
+    private bool _isLoading = true;
 
     private List<SectionDto>? Sections { get; set; }
 
@@ -29,5 +30,7 @@ public partial class About
         {
             ToastService.ShowToast(AboutService.DisplayMessage, ToastLevel.Error);
         }
+
+        _isLoading = false;
     }
 }

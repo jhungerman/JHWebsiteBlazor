@@ -6,25 +6,28 @@
 <QuoteBlock PageType="PageType.About" />
 
 <div class="container">
-    @if (Sections != null)
+    @if (_isLoading)
     {
-        @foreach (var aboutSection in Sections)
-        {
-            <section class="container-fluid mt-2">
-                <h4>@aboutSection.Title</h4>
-                @if (aboutSection.Paragraphs != null)
-                {
-                    foreach (var paragraph in aboutSection.Paragraphs)
-                    {
-                        <br/>
-                        <p>@paragraph.Content</p>
-                    }
-                }
-            </section>
-        }
+        <LoadingPlaceholder/>
     }
     else
     {
-        <LoadingPlaceholder />
+        @if (Sections != null)
+        {
+            @foreach (var aboutSection in Sections)
+            {
+                <section class="container-fluid mt-2">
+                    <h4>@aboutSection.Title</h4>
+                    @if (aboutSection.Paragraphs != null)
+                    {
+                        foreach (var paragraph in aboutSection.Paragraphs)
+                        {
+                            <br/>
+                            <p>@paragraph.Content</p>
+                        }
+                    }
+                </section>
+            }
+        }
     }
 </div>

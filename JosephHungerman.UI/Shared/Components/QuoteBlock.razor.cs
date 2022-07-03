@@ -14,6 +14,7 @@ public partial class QuoteBlock
     [Parameter] public PageType PageType { get; set; }
 
     private QuoteDto? Quote { get; set; }
+    private bool _isLoading = true;
 
     protected override async Task OnInitializedAsync()
     {
@@ -30,5 +31,7 @@ public partial class QuoteBlock
         {
             ToastService.ShowToast(QuoteService.DisplayMessage, ToastLevel.Error);
         }
+
+        _isLoading = false;
     }
 }

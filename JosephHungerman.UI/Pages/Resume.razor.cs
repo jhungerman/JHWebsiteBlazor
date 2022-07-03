@@ -12,6 +12,7 @@ public partial class Resume
     [Inject] IToastService ToastService { get; set; }
 
     private ResumeDto? _resume;
+    private bool _isLoading = true;
 
     protected override async Task OnInitializedAsync()
     {
@@ -28,5 +29,7 @@ public partial class Resume
         {
             ToastService.ShowToast(ResumeService.DisplayMessage, ToastLevel.Error);
         }
+
+        _isLoading = false;
     }
 }
