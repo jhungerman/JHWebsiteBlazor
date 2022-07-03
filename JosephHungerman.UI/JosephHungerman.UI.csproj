@@ -22,7 +22,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Services\About\" />
+    <Folder Include="Services\Toast\" />
     <Folder Include="Services\Quote\" />
+    <Folder Include="Shared\Enums\" />
     <Folder Include="Static\" />
   </ItemGroup>
 

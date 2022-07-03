@@ -11,14 +11,18 @@ public partial class QuoteBlock
     [Parameter] public PageType PageType { get; set; }
 
     private QuoteDto? Quote { get; set; }
+    private string DisplayMessage { get; set; } = string.Empty;
 
     protected override async Task OnInitializedAsync()
     {
-        if (QuoteService.Quotes == null)
+        if (QuoteService?.Quotes == null)
         {
             await QuoteService.GetQuotesAsync();
         }
 
-        Quote = QuoteService.Quotes!.FirstOrDefault(q => q.PageType == PageType);
+        if (QuoteService.DisplayMessage == null)
+        {
+            Quote = QuoteService.Quotes!.FirstOrDefault(q => q.PageType == PageType);
+        }
     }
 }

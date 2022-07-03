@@ -15,6 +15,8 @@ public class QuoteService : IQuoteService
     }
 
     public List<QuoteDto>? Quotes { get; set; }
+    public string? DisplayMessage { get; set; }
+
     public async Task GetQuotesAsync()
     {
         var response =
@@ -23,6 +25,10 @@ public class QuoteService : IQuoteService
         if (response is {Content: { }})
         {
             Quotes = response.Content;
+        }
+        else
+        {
+            DisplayMessage = response?.StatusMessage;
         }
     }
 }

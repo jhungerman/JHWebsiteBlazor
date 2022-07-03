@@ -7,5 +7,6 @@ namespace JosephHungerman.UI.Services.Quote;
 public interface IQuoteService
 {
     public List<QuoteDto>? Quotes { get; set; }
+    public string? DisplayMessage { get; set; }
     Task GetQuotesAsync();
 }
