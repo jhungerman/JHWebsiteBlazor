@@ -1,6 +1,7 @@
 using Azure.Identity;
 using JosephHungerman.UI;
 using JosephHungerman.UI.Services.About;
+using JosephHungerman.UI.Services.Contact;
 using JosephHungerman.UI.Services.Quote;
 using JosephHungerman.UI.Services.Toast;
 using JosephHungerman.UI.Static;
@@ -17,6 +18,7 @@ builder.Services.AddSingleton(_ => new HttpClient { BaseAddress = ApiEndpoints.A
 builder.Services.AddScoped<IQuoteService, QuoteService>();
 builder.Services.AddScoped<IAboutService, AboutService>();
 builder.Services.AddScoped<IToastService, ToastService>();
+builder.Services.AddScoped<IContactService, ContactService>();
 
 //var keyVaultEndpoint = new Uri(builder.Configuration.GetSection("VaultUri").Value);
 //builder.Configuration.AddAzureKeyVault(keyVaultEndpoint, new DefaultAzureCredential());

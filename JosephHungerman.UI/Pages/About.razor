@@ -4,20 +4,22 @@
 
 <QuoteBlock PageType="PageType.About" />
 
-@if (Sections != null)
-{
-    @foreach (var aboutSection in Sections)
+<div class="container">
+    @if (Sections != null)
     {
-        <section class="container-fluid mt-2">
-            <h4>@aboutSection.Title</h4>
-            @if (aboutSection.Paragraphs != null)
-            {
-                foreach (var paragraph in aboutSection.Paragraphs)
+        @foreach (var aboutSection in Sections)
+        {
+            <section class="container-fluid mt-2">
+                <h4>@aboutSection.Title</h4>
+                @if (aboutSection.Paragraphs != null)
                 {
-                    <br/>
-                    <p>@paragraph.Content</p>
+                    foreach (var paragraph in aboutSection.Paragraphs)
+                    {
+                        <br/>
+                        <p>@paragraph.Content</p>
+                    }
                 }
-            }
-        </section>
+            </section>
+        }
     }
-}
+</div>
