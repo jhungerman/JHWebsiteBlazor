@@ -25,7 +25,12 @@ public class ResumeService : IResumeService
 
             if (response is { Content: { } })
             {
-                Resume = response.Content;
+                var resume = response.Content;
+                resume.Educations = resume.Educations.OrderByDescending(e => e.EndDate).ToList();
+                resume.WorkExperiences = resume.WorkExperiences.OrderByDescending(we => we.StartDate).ThenByDescending(we => we.EndDate).ToList();
+                resume.Certifications = resume.Certifications.OrderByDescending(c => c.StartDate).ToList();
+
+                Resume = resume;
             }
             else
             {

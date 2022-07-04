@@ -4,14 +4,16 @@
 }
 
 #homeCaption {
-    position: absolute;
-    bottom: 2.5em;
+    position: relative;
+    bottom: 20px;
     padding-left: 1em;
     color: white;
+    font-size: 12px;
 }
 
 @media (min-width: 768px) {
     #homeCaption {
-        bottom: 5em;
+        bottom: 35px;
+        font-size: 16px;
     }
 }
